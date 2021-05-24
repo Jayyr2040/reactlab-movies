@@ -74,7 +74,7 @@ Let's fix this:
 
 Take the `isFave` state out of the `Fave` and move up one level to `FilmRow`.
 
-#### Step 2: Replace `setState` in `handleFaveClick` handler
+#### Step 2: Replace `setIsFave` in `handleFaveClick` handler
 
 Since you're no longer holding the state in the `Fave` component, you no longer want to set the `isFave` state in the `handleClick()` event handler.
 
@@ -92,7 +92,7 @@ function handleClick(e) {
   // Add this line. You'll call the function passed through props
   props.onFaveToggle()
 
-  // Delete the `setState` line. You no longer track state here
+  // Delete the `setIsFave` line. You no longer track state here
   // setIsFave(!isFave)
 }
 ```
