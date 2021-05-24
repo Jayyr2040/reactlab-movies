@@ -50,7 +50,7 @@ Your secrets are now set up!
 
 Now that you have the API key to call for movie details, let's go back to making that call.
 
-In your `App.js` `handleDetailsClick` method, add the following `const` right above your `setState`:
+In your `App.js` `handleDetailsClick` method, add the following `const` right above your `setCurrent`:
 
 ```JavaScript
 const url = `https://api.themoviedb.org/3/movie/${film.id}?api_key=${TMDB.api_key}&append_to_response=videos,images&language=en`
