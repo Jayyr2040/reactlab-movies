@@ -31,12 +31,10 @@ import TMDB from './TMDB.js';
 function App () {
     const [faves, setFaves] = useState([])
     return (
-      <div className="App" >
         <div className="film-library">
           <FilmListing films={TMDB.films} />
           <FilmDetails films={TMDB.films} />
         </div>
-      </div>
     );
 }
 
