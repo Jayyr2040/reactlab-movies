@@ -92,7 +92,7 @@ axios({
 }).then(response => {
   console.log(response) // take a look at what you get back!
   console.log(`Fetching details for ${film.title}`);
-  this.setState({ current: response.data })
+  setCurrent(response.data)
 })
 ```
 
