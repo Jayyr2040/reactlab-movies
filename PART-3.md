@@ -74,7 +74,7 @@ Let's fix this:
 
 Take the `isFave` state out of the `Fave` and move up one level to `FilmRow`.
 
-#### Step 2: Replace `setState` in `handleFaveClick` handler
+#### Step 2: Replace `setIsFave` in `handleFaveClick` handler
 
 Since you're no longer holding the state in the `Fave` component, you no longer want to set the `isFave` state in the `handleClick()` event handler.
 
@@ -92,7 +92,7 @@ function handleClick(e) {
   // Add this line. You'll call the function passed through props
   props.onFaveToggle()
 
-  // Delete the `setState` line. You no longer track state here
+  // Delete the `setIsFave` line. You no longer track state here
   // setIsFave(!isFave)
 }
 ```
@@ -126,11 +126,11 @@ hint:
 
 To do this, you need to call `setFaves` and give it the updated array (you can't just update it directly; otherwise React won't know to re-render the components to reflect the changes). To accomplish this, you'll make a copy of the existing faves array, update it, then pass the copy to `setFaves`.
 
-First, just make a copy. Inside `handleFaveToggle`, use the JavaScript [`Array.prototype.slice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice) method to make a copy and store it in a `const` variable called `faves`.
+First, just make a copy. Inside `handleFaveToggle`, use the JavaScript [`Array.prototype.splice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) method to make a copy and store it in a `const` variable called `faves`.
 
 #### Step 6: Find the index of the passed film in the `faves` array
 
-Now underneath the slice, use the JavaScript [`Array.prototype.indexOf()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) method to store the position of the film in the array in a `const` variable called `filmIndex`.
+Now underneath the splice, use the JavaScript [`Array.prototype.indexOf()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) method to store the position of the film in the array in a `const` variable called `filmIndex`.
 
 Now, `filmIndex` will be an index value starting at `0`.
 
@@ -164,7 +164,7 @@ setFaves(tempFaves)
 
 Now that the `handleFaveToggle` method lives on the `App` component, you want to pass it all the way down the tree so that you can call it when the "Fave" button is clicked.
 
-In the `App` component's `render` method, add a new prop to the `FilmListing` component called `onFaveToggle`. Its value should be a reference to the `handleFaveToggle` method you just finished writing.
+In the `App` component's add a new prop to the `FilmListing` component called `onFaveToggle`. Its value should be a reference to the `handleFaveToggle` method you just finished writing.
 
 #### Step 11: Pass the `onFaveToggle` function to `FilmRow` through props
 
@@ -172,7 +172,7 @@ In the `FilmListing` component, you render one `FilmRow` component for each film
 
 To make this happen, you won't simply pass the function down to `FilmRow` as a prop as-is; you'll wrap it in another function that simply calls the `onFaveToggle` function passed down from App through props (remember, `onFaveToggle` in `FilmListing` is just a reference to `handleFaveToggle` in the `App` component).
 
-In the `FilmListing` component's `render` method, add the `onFaveToggle` variable. Replace your existing `map` function with this:
+In the `FilmListing` component's add the `onFaveToggle` variable. Replace your existing `map` function with this:
 
 ```js
 const allFilms = props.films.map((film) => {
