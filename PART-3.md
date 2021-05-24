@@ -126,11 +126,11 @@ hint:
 
 To do this, you need to call `setFaves` and give it the updated array (you can't just update it directly; otherwise React won't know to re-render the components to reflect the changes). To accomplish this, you'll make a copy of the existing faves array, update it, then pass the copy to `setFaves`.
 
-First, just make a copy. Inside `handleFaveToggle`, use the JavaScript [`Array.prototype.slice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice) method to make a copy and store it in a `const` variable called `faves`.
+First, just make a copy. Inside `handleFaveToggle`, use the JavaScript [`Array.prototype.splice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) method to make a copy and store it in a `const` variable called `faves`.
 
 #### Step 6: Find the index of the passed film in the `faves` array
 
-Now underneath the slice, use the JavaScript [`Array.prototype.indexOf()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) method to store the position of the film in the array in a `const` variable called `filmIndex`.
+Now underneath the splice, use the JavaScript [`Array.prototype.indexOf()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) method to store the position of the film in the array in a `const` variable called `filmIndex`.
 
 Now, `filmIndex` will be an index value starting at `0`.
 
