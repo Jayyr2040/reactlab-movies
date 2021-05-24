@@ -98,35 +98,8 @@ axios({
 
 Now, you have the API call to get information about your chosen movie.
 
-### Task 2: Refactoring our app
 
-Before you continue to display the movie details to the user, let's clean up your application.
-
-Let's refactor any components that only have a `render()` method into functional components. Functional components are simpler and will gain performance benefits in future versions of React. It is considered good practice to use them wherever possible.
-
-#### Step 1: Refactor `FilmPoster.js`
-
-1. Replace the `class`/`extends` definition with a `function`. Remember that your function should accept a `props` argument.
-2. Remove the `render()` method, keeping only the `return` function.
-3. Replace all instances of `this.props` with simply `props`
-4. Remove `{Component}` from the React `import` at the top since you no longer use it (but still import `React`).
-
-Check in your browser to be sure the functionality hasn't changed.
-
-#### Step 2: Refactor `FilmDetails`
-
-You haven't written out the `FilmDetails` component yet, but it currently only renders UI. Therefore, you can also make it a functional component.
-
-Follow the same steps as above, and once again check in the browser for functionality.
-
-#### Step 3: Refactor `FilmRow`
-
-The `FilmRow` component currently only renders UI. Therefore, you can also make it a functional component.
-
-Follow the same steps as above, and once again check in the browser for functionality.
-
-
-### Task 3: Adding Film Details
+### Task 2: Adding Film Details
 
 You're almost finished. Now, you'll render the film details you're receiving from the API (and currently logging to the console) in the browser window for the user.
 
