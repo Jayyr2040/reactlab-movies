@@ -131,14 +131,6 @@ Start with the empty case. Add the following markup below the `.section-title`.
 
 #### Step 3: Conditionally render the current film
 
-To start, create a new variable to hold on to your DOM tree. You'll conditionally assign the value to this variable depending on whether or not there's a film object passed in through the props.
-
-Add this below the two declared `const` variables:
-
-```js
-let details
-```
-
 Now, you need to determine if there is a film to render or not.
 
 To do this, you just need to check if there's an `id` property on the `film` prop passed in to `FilmDetail`.
