@@ -164,7 +164,7 @@ setFaves(tempFaves)
 
 Now that the `handleFaveToggle` method lives on the `App` component, you want to pass it all the way down the tree so that you can call it when the "Fave" button is clicked.
 
-In the `App` component's `render` method, add a new prop to the `FilmListing` component called `onFaveToggle`. Its value should be a reference to the `handleFaveToggle` method you just finished writing.
+In the `App` component's add a new prop to the `FilmListing` component called `onFaveToggle`. Its value should be a reference to the `handleFaveToggle` method you just finished writing.
 
 #### Step 11: Pass the `onFaveToggle` function to `FilmRow` through props
 
@@ -172,7 +172,7 @@ In the `FilmListing` component, you render one `FilmRow` component for each film
 
 To make this happen, you won't simply pass the function down to `FilmRow` as a prop as-is; you'll wrap it in another function that simply calls the `onFaveToggle` function passed down from App through props (remember, `onFaveToggle` in `FilmListing` is just a reference to `handleFaveToggle` in the `App` component).
 
-In the `FilmListing` component's `render` method, add the `onFaveToggle` variable. Replace your existing `map` function with this:
+In the `FilmListing` component's add the `onFaveToggle` variable. Replace your existing `map` function with this:
 
 ```js
 const allFilms = props.films.map((film) => {
