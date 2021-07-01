@@ -60,6 +60,7 @@ This is the URL to which you'll send your request to get detailed information ab
 
 - *Note: Using `${film.id}` is a slightly faster shorthand for embedding variables in strings.*
   - *For example, `const myString = "The " + film.id + " is great"` is the same as writing `const myString = "The ${film.id} is great"`.*
+  - *Use the backtick(the key beside 1 on your keyboard) instead of normal quotation marks to get the ${variable} to work*
 
 
 #### Step 3: Make the API call with Axios
@@ -173,7 +174,6 @@ return (
 
 Here are some optional things you can do to deepen your knowledge and take this app further:
 
-- Refactor `Fave` into a functional component.
 - Move the filters into a `FilmListingFilter` component.
 - Implement client-side routing to show multiple pages of films.
 - Go through the CSS and see how the app is styled (it uses both flexbox and CSS Grid).

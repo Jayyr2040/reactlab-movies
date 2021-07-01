@@ -117,14 +117,15 @@ You'll move the favorite toggle functionality all the way up to the `App` compon
 
 To recap, the `faves` state is going to hold the user's favorite films. Your goal is to, when the user clicks the icon to favorite or unfavorite a film, either add or remove the given film from the `faves` array. 
 
+To do this, you need to call `setFaves` and give it the updated array (you can't just update it directly; otherwise React won't know to re-render the components to reflect the changes). To accomplish this, you'll make a copy of the existing faves array, update it, then pass the copy to `setFaves`.
+
+First, just make a copy. Inside `handleFaveToggle`, use the JavaScript [`Array.prototype.slice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice) method to make a copy and store it in a `const` variable called `faves`.
+* You can also use the [`Spread Syntax`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) way to makea shallow clone. *
+
 hint: 
 ```js 
     let tempFaves = [...faves]
 ```
-
-To do this, you need to call `setFaves` and give it the updated array (you can't just update it directly; otherwise React won't know to re-render the components to reflect the changes). To accomplish this, you'll make a copy of the existing faves array, update it, then pass the copy to `setFaves`.
-
-First, just make a copy. Inside `handleFaveToggle`, use the JavaScript [`Array.prototype.splice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) method to make a copy and store it in a `const` variable called `faves`.
 
 #### Step 6: Find the index of the passed film in the `faves` array
 
