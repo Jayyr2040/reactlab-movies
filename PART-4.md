@@ -59,7 +59,7 @@ const url = `https://api.themoviedb.org/3/movie/${film.id}?api_key=${TMDB.api_ke
 This is the URL to which you'll send your request to get detailed information about each film. You're passing the `film.id` and the `TMDB.api_key` as query string parameters.
 
 - *Note: Using `${film.id}` is a slightly faster shorthand for embedding variables in strings.*
-  - *For example, `const myString = "The " + film.id + " is great"` is the same as writing `const myString = "The ${film.id} is great"`.*
+  - *For example, `const myString = "The " + film.id + " is great"` is the same as writing "`const myString = "The ${film.id} is great"`".*
 
 
 #### Step 3: Make the API call with Axios
@@ -173,7 +173,6 @@ return (
 
 Here are some optional things you can do to deepen your knowledge and take this app further:
 
-- Refactor `Fave` into a functional component.
 - Move the filters into a `FilmListingFilter` component.
 - Implement client-side routing to show multiple pages of films.
 - Go through the CSS and see how the app is styled (it uses both flexbox and CSS Grid).
