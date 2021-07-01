@@ -5,12 +5,13 @@
 Stop any project you currently have running; let's go back to the film application that you've started. You can run the app with `npm start`.
 
 Your goal today is to add some events to your app. You'll keep the events simple for now - each event will simply print a message to the console.
+
 - In the future, however, you're going to be able to add films to your list of favorites, filter the films to see only your favorites, and see the details for a specific film. Your work today will make that possible.
 
-![](images/film-2.png)
-
 ### Tasks - Part 1: Adding Favorites
+
 Install the follow for the icons to appear:
+
 ```bash
 npm install @material-ui/core
 
@@ -23,11 +24,12 @@ Create a new component called `Fave` that will eventually handle whether a movie
 
 ```html
 <div className="film-row-fave add_to_queue">
-  <p className="material-icons"><AddToQueue /> </p>
+  <p className="material-icons"><AddToQueue /></p>
 </div>
 ```
 
 At the top of the fave component, import the following:
+
 ```js
 import { AddToQueue, RemoveFromQueue } from "@material-ui/icons";
 ```
@@ -38,7 +40,7 @@ In your browser, the icon should appear at the bottom right corner of each film 
 
 #### Step 2: Define a `handleClick` function in `Fave`
 
-Inside the `Fave` component, define a function called `handleClick`. The function should accept an event (`e`) as an argument. Simply log out a message like `"handling Fave click!"` for now.
+Inside the `Fave` component, define a function called `handleClick`. The function should accept an event (`event`) as an argument. Simply log out a message like `"handling Fave click!"` for now.
 
 Since you aren't using this anywhere yet, nothing should change.
 
@@ -70,19 +72,19 @@ Change the `FilmListing` component to render this:
 
 ```html
 <div className="film-list">
-    <h1 className="section-title">FILMS</h1>
-    <div className="film-list-filters">
-        <div className="film-list-filter">
-            ALL
-            <span className="section-count">{films.length}</span>
-        </div>
-        <div className="film-list-filter">
-            FAVES
-            <span className="section-count">0</span>
-        </div>
+  <h1 className="section-title">FILMS</h1>
+  <div className="film-list-filters">
+    <div className="film-list-filter">
+      ALL
+      <span className="section-count">{films.length}</span>
     </div>
+    <div className="film-list-filter">
+      FAVES
+      <span className="section-count">0</span>
+    </div>
+  </div>
 
-    {allFilms}
+  {allFilms}
 </div>
 ```
 
@@ -99,8 +101,6 @@ Add an `onClick` inside `FilmListing` so that when "FAVES" is clicked, it calls 
   This will look like this:
   <code>onClick={() => handleFilterClick('faves')}</code>
 </details>
-
-
 
 Try clicking FAVES - does it print to the console?
 
@@ -146,8 +146,6 @@ The first state you'll add will be whether a currently selected film is a user's
 
 To add a state import `useState` into your fave component.
 
-
-
 #### Step 2: Set the initial state
 
 By default, a film is not a user's favorite.
@@ -155,8 +153,9 @@ By default, a film is not a user's favorite.
 Back to the `Fave` component, set `state` name to `isFave` and setter function to `setIsFave` and the initial value `false`. This will set up the initial state of the component.
 
 ```javascript
-  const [isFave, setIsFave] = useState(false)
+const [isFave, setIsFave] = useState(false);
 ```
+
 #### Step 3: Set the state in your event handler
 
 When the user clicks the Fave icon/button to add or remove a film from their favorites list, the app should change the film's `isFave` state to reflect that.
@@ -168,13 +167,12 @@ Inside of the `handleClick` method on the `Fave` component, use `setIsFave` to t
   <code>!isFave</code>
 </details>
 
-
-
 #### Step 4: Set the `className` on `div` based on the `IsFave` state
 
 You now want the `className` attribute on the `div` to dynamically update when the state is changed. Currently, the `className` on the `div` is `add_to_queue`. However, if the film is already favorited, then the film is already in the queue. Therefore, when `isFave: true`, the `className` should instead be `remove_from_queue`.
 
 You need to make this happen:
+
 - When `isFave: true`, you want to give the `div` the class `remove_from_queue`. When `isFave: false` you want to give the `div` the class `add_to_queue`.
 - You also want to change the text that's rendered in the `p` to be the same text as the class - `remove_from_queue` or `add_to_queue`.
 
@@ -184,9 +182,10 @@ Note: It will be easier to read if you determine which class to set first, store
   <summary>Hint - a more advanced and succinct way to write this function could be:</summary>
   <code>{(isFave) ? 'remove_from_queue' : 'add_to_queue'}</code>
 
-  You can drop this in the <code>render</code> method. This checks the current <code>isFave</code> state for true or false.
+You can drop this in the <code>render</code> method. This checks the current <code>isFave</code> state for true or false.
 
-  If it's true, it sets the <code>const</code> variable <code>isFave</code> to <code>remove_from_queue</code>; when it's false, it sets the <code>const</code> variable <code>isFave</code> to <code>add_to_queue</code>.
+If it's true, it sets the <code>const</code> variable <code>isFave</code> to <code>remove_from_queue</code>; when it's false, it sets the <code>const</code> variable <code>isFave</code> to <code>add_to_queue</code>.
+
 </details>
 
 Once you have this, clicking the "Add" icon in each row should change the icon displayed.
@@ -226,8 +225,8 @@ You now want the `className` attribute on each `.film-list-filter` `div` to dyna
   ```
 
 (Don't forget to change it for the other <code>div</code>).
-</details>
 
+</details>
 
 Check in your browser that everything works.
 
