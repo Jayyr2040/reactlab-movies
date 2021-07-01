@@ -59,7 +59,8 @@ const url = `https://api.themoviedb.org/3/movie/${film.id}?api_key=${TMDB.api_ke
 This is the URL to which you'll send your request to get detailed information about each film. You're passing the `film.id` and the `TMDB.api_key` as query string parameters.
 
 - *Note: Using `${film.id}` is a slightly faster shorthand for embedding variables in strings.*
-  - *For example, `const myString = "The " + film.id + " is great"` is the same as writing "`const myString = "The ${film.id} is great"`".*
+  - *For example, `const myString = "The " + film.id + " is great"` is the same as writing `const myString = "The ${film.id} is great"`.*
+  - *Use the backtick(the key beside 1 on your keyboard) instead of normal quotation marks to get the ${variable} to work*
 
 
 #### Step 3: Make the API call with Axios
