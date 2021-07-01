@@ -3,13 +3,11 @@
 1. Start by running `npx create-react-app reactfilm`
 1. Copy and replace your `index.css` with the one in this project
 1. Copy the `normalize.css` into your project `src` directory
-1. Include your `normalize.css` into the `index.js`
+1. Import your `normalize.css` into the `index.js`
 
 ## Your Mission
 
-Today the plan is to identify the app components, create the overall structure, then split that structure into individual components. You'll pass films as props to each component and ultimately use iteration to render one component for each film. At the end of this exercise, you will have this app:
-
-![](images/film-1.png)
+Today the plan is to identify the app components, create the overall structure, then split that structure into individual components. You'll pass films as props to each component and ultimately use iteration to render one component for each film.
 
 ### Tasks
 
@@ -24,7 +22,7 @@ Today the plan is to identify the app components, create the overall structure, 
 
 First, create the layout. You'll have a Films column and a Details column.
 
-Make the provided `App` component render the following code:
+Make the provided `App` Component render the following code:
 
 ```html
 <div className="film-library">
@@ -46,7 +44,7 @@ Make sure you now call these components in `App.js`. Check your app in the brows
 
 #### Step 3: Pass props to the new components
 
-Pass the films (stored in `TMDB.films`) to each of your new components as props.
+Pass the films (stored as `TMDB.films` in `TMDB.js`) to each of your new components as props.
 
 If you check your file, it still shouldn't look differently. We're sending the props to the components, but we are not using the props yet.
 
@@ -66,7 +64,6 @@ Does "It" appear on the left side of your browser?
   The films prop is an array, and you just want the title from the first one.
 </details>
 
-
 #### Step 5: Create and render an array of film title elements
 
 Use `.map()` inside of the `FilmListing` to iterate over the collection of films and create an element for each one. (Here is the [map documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)).
@@ -85,14 +82,11 @@ You should have a list of all the films appear in the left column.
    
 </details>
 
-
-
 #### Step 6: Move the film rows to their own component
 
-Create a new component for each film row, called `FilmRow.js`. Have your `map` instead create an array of `FilmRow`s. Don't forget to pass the individual film prop to the component when creating them!
+Create a new component for each film row, called `FilmRow.js`. Have your `map` to create an array of `FilmRow`. Don't forget to pass the individual film prop to the component when creating them!
 
 Once you have this working, also pass `film.id` as a `key` prop to `FilmRow`, though you won't use it yet.
-
 
 #### Step 7: Flesh out each film row
 
@@ -117,7 +111,6 @@ Make each film row in the film list look like the main finished image, using the
   <summary>Hint on <code>getFullYear()</code></summary>
   <code>getFullYear()</code> will be a single line of new code, and you'll use the keywords <code>new</code> and <code>Date</code>.
 </details>
-
 
 #### Step 8: Move film posters to their own component
 
