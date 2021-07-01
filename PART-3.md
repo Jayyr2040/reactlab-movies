@@ -19,7 +19,7 @@ Your `App` component will be the main place where states are set. From here, the
 
 #### Step 1: Import `{ useState }` to `App.js`
 
-To have access to `state`, we need to refactor `App.js` into a proper class Component. It should look like this:
+It should look like this:
 
 ```js
 import React, { useState } from 'react';
@@ -155,8 +155,6 @@ Now that you have updated the `faves` array, you need to call `setFaves` so Reac
 
 ```js
 setFaves(tempFaves)
-
-// The above is exactly the same as this.setState({faves: faves})
 ```
 
 #### Step 10: Pass the `handleFaveToggle` function to `FilmListing` through props
